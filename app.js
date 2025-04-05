@@ -102,7 +102,7 @@ const main = async () => {
         verifyToken: VERIFY_TOKEN, // Usa el mismo token que en el webhook
         version: 'v16.0', // Versión de la API de WhatsApp
         webhook: 'https://publia.mx/chatbot/hoock', // URL absoluta de tu webhook
-        port: 80
+        port: 3080
     });
 
     createBot({
@@ -117,7 +117,7 @@ const main = async () => {
 main();
 
 // ===== INICIAR SERVIDOR EXPRESS =====
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3080;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
