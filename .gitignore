@@ -1,0 +1,37 @@
+# Node.js modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# .env file containing sensitive information
+.env
+
+# npm package-lock file, sometimes not necessary to commit
+package-lock.json
+yarn.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# Optional directories for coverage reports
+coverage/
+
+# Build directories (for production build)
+dist/
+build/
+
+# Miscellaneous
+*.tgz
