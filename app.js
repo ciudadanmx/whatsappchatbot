@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
 // ===== WEBHOOK PARA META =====
-app.get('/chatbot/hoock', (req, res) => {
+app.get('/chatbot/webhook', (req, res) => {
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
@@ -27,7 +27,7 @@ app.get('/chatbot/hoock', (req, res) => {
 });
 
 // ===== RECIBIR MENSAJES DE WHATSAPP =====
-app.post('/chatbot/hoock', (req, res) => {
+app.post('/chatbot/webhook', (req, res) => {
     console.log('📩 Mensaje recibido:', JSON.stringify(req.body, null, 2));
     res.sendStatus(200);
 });
@@ -101,7 +101,7 @@ const main = async () => {
         numberId: 'tu_number_id', // ID del número de WhatsApp en Meta
         verifyToken: VERIFY_TOKEN, // Usa el mismo token que en el webhook
         version: 'v16.0', // Versión de la API de WhatsApp
-        webhook: 'https://publia.mx/chatbot/webhoock', // URL absoluta de tu webhook
+        webhook: 'https://publia.mx/chatbot/webhook', // URL absoluta de tu webhook
         port: 3080
     });
 
