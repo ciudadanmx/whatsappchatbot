@@ -101,7 +101,8 @@ const main = async () => {
         numberId: 'tu_number_id', // ID del número de WhatsApp en Meta
         verifyToken: VERIFY_TOKEN, // Usa el mismo token que en el webhook
         version: 'v16.0', // Versión de la API de WhatsApp
-        webhook: 'https://ciudadan.org/chatbot/hoock' // URL absoluta de tu webhook
+        webhook: 'https://publia.mx/chatbot/hoock', // URL absoluta de tu webhook
+        port: 80
     });
 
     createBot({
