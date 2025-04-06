@@ -100,7 +100,7 @@ const main = async () => {
         jwtToken: process.env.VERIFY_TOKEN,
         numberId: process.env.NUMBER_ID,
         verifyToken: KEY,
-        version: 'v16.0',
+        version: 'v22.0',
         webhook: 'https://publia.mx/webhook',
         port: 3080
     });
