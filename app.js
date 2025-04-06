@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
 
-const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const KEY = process.env.KEY;
 
 // ===== WEBHOOK PARA META =====
 app.get('/webhook', (req, res) => {
@@ -17,7 +17,7 @@ app.get('/webhook', (req, res) => {
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
 
-    if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+    if (mode === 'subscribe' && token === KEY) {
         console.log('✅ Webhook verificado con éxito');
         res.status(200).send(challenge);
     } else {
@@ -97,9 +97,9 @@ const main = async () => {
     const adapterFlow = createFlow([flowPrincipal]);
 
     const adapterProvider = createProvider(MetaProvider, {
-        jwtToken: process.env.JWT_TOKEN,
+        jwtToken: process.env.VERIFY_TOKEN,
         numberId: process.env.NUMBER_ID,
-        verifyToken: VERIFY_TOKEN,
+        verifyToken: KEY,
         version: 'v16.0',
         webhook: 'https://publia.mx/webhook',
         port: 3080
