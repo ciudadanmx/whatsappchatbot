@@ -97,11 +97,11 @@ const main = async () => {
     const adapterFlow = createFlow([flowPrincipal]);
 
     const adapterProvider = createProvider(MetaProvider, {
-        jwtToken: 'tu_jwt_token', // Reemplaza con tu token de acceso de Meta
-        numberId: 'tu_number_id', // ID del número de WhatsApp en Meta
-        verifyToken: VERIFY_TOKEN, // Usa el mismo token que en el webhook
-        version: 'v16.0', // Versión de la API de WhatsApp
-        webhook: 'https://publia.mx/webhook', // URL absoluta de tu webhook
+        jwtToken: process.env.JWT_TOKEN,
+        numberId: process.env.NUMBER_ID,
+        verifyToken: VERIFY_TOKEN,
+        version: 'v16.0',
+        webhook: 'https://publia.mx/webhook',
         port: 3080
     });
 
